@@ -62,7 +62,7 @@ if (!$action) { ?>
     <tr>
         <th style="background-color: #AAA; margin: 1em;">PIN</th>
         <th style="background-color: #AAA; margin: 1em;">Person</th>
-        <th style="background-color: #AAA; margin: 1em;">Revoke</th>
+        <th style="background-color: #AAA; margin: 1em;">Disassociate</th>
     </tr>
     <?php foreach (pindist_get_pin_associations($pinset_id) as $association) { ?> 
     <tr>
@@ -72,8 +72,8 @@ if (!$action) { ?>
         <a href="?display=pindist&action=revoke&pin=<?php echo $association['pin']; ?>&pinset=<?php echo $pinset_id; ?>">
         <?php $pin = $association['pin']; $name = $association['name']; ?>
             <img src="/admin/images/user_delete.png" 
-                    alt="Revoke PIN <?php echo $pin; ?> from <?php echo $pin; ?>"
-                    title="Revoke PIN <?php echo $pin; ?> from <?php echo $pin; ?>">
+                    alt="Disassociate PIN <?php echo $pin; ?> from <?php echo $pin; ?>"
+                    title="Disassociate PIN <?php echo $pin; ?> from <?php echo $pin; ?>">
         </a>
         </td>
     </tr> 
