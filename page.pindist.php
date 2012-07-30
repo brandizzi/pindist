@@ -39,7 +39,8 @@ if (!$action) { ?>
 ?>
 <div class="pindist pins">
     <h2>PINs</h2>
-    <h3>Available</h3>
+    <div class="available" style="float:left; width: 25%;">
+    <h3 style="margin-top: 0em;">Available</h3>
     <table sytle="border: 1px solid #999; background-color: #DDD; text-align: center;">
     <tr>
         <th style="background-color: #AAA; margin: 1em;">PIN</th><th style="background-color: #AAA; margin: 1em;">Associate</th>
@@ -57,6 +58,8 @@ if (!$action) { ?>
     </tr> 
     <?php } ?>
     </table>
+    </div>
+    <div class="attributed" style="margin-left: 30%; width: 60%;"/>
     <h3>Attributed</h3>
     <table>
     <tr>
@@ -79,6 +82,8 @@ if (!$action) { ?>
     </tr> 
     <?php } ?>
     </table>
+    </div>
+    <div style="clear:both;"></div>
 </div>
 <?php } else if ($action == 'attribute') {  
     $pin = $_REQUEST['pin'];
