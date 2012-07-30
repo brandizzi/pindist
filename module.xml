@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+	<rawname>pindist</rawname>
+	<name>PIN Distributor</name>
+	<version>1.0.0.0</version>
+	<publisher>Grupo 954</publisher>
+    <description>
+            PIN Distributor allows the association between users and PIN numbers.
+    </description>
+	<type>setup</type>
+    <category>Internal Options &amp; Configuration</category>
+	<menuitems>
+		<pindist needsenginedb="yes">PIN Distribution</pindist>
+	</menuitems>
+    <depends>
+            <module>core</module>
+            <version>2.8</version>
+            <engine>asterisk 1.6</engine>
+    </depends>
+	<location>http://grupo954.com/</location>
+	<info>http://grupo954.com/</info>
+    <changelog>
+            
+    </changelog>
+</module>
