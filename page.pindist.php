@@ -42,16 +42,16 @@ $pinset_id = @$_REQUEST['pinset'];
 <?php } else if (!$action && $pinset_id) { ?>
 <div class="pindist pins">
     <h3>PINs</h3>
-    <div class="available" style="float:left; width: 25%;">
-    <h4 style="margin-top: 0em;">Available</h4>
-    <table sytle="border: 1px solid #999; background-color: #DDD; text-align: center;">
+    <div class="available">
+    <h4>Available</h4>
+    <table style="text-align: center;">
     <tr>
-        <th style="background-color: #AAA; margin: 1em;">PIN</th><th style="background-color: #AAA; margin: 1em;">Associate</th>
+        <th>PIN</th><th>Associate</th>
     </tr>
     <?php foreach (pindist_get_free_pins($pinset_id) as $pin) { ?>
     <tr>
-        <td style="border: 1px solid #999; background-color: #DDD; margin: 1em; padding: 0 1em 0 1em;"><?php echo $pin; ?></td>
-        <td style="border: 1px solid #999; background-color: #DDD; margin: 1em; padding: 0 1em 0 1em;">
+        <td><?php echo $pin; ?></td>
+        <td>
         <a href="?display=pindist&action=attribute&pin=<?php echo $pin; ?>&pinset=<?php echo $pinset_id; ?>">
             <img src="/admin/images/user_add.png" 
                     alt="Attribute PIN <?php echo $pin; ?> to an user"
@@ -62,20 +62,20 @@ $pinset_id = @$_REQUEST['pinset'];
     <?php } ?>
     </table>
     </div>
-    <div class="attributed" style="margin-left: 30%; width: 60%;"/>
+    <div class="attributed"/>
     <h4>Attributed</h4>
-    <table>
+    <table style="text-align: center;">
     <tr>
-        <th style="background-color: #AAA; margin: 1em;">PIN</th>
-        <th style="background-color: #AAA; margin: 1em;">Person</th>
-        <th style="background-color: #AAA; margin: 1em;">Free</th>
-        <th style="background-color: #AAA; margin: 1em;">Revoke</th>
+        <th>PIN</th>
+        <th>Person</th>
+        <th>Free</th>
+        <th>Revoke</th>
     </tr>
     <?php foreach (pindist_get_pin_associations($pinset_id) as $association) { ?> 
     <tr>
-        <td style="border: 1px solid #999; background-color: #DDD; margin: 1em; padding: 0 1em 0 1em;"><?php echo $association['pin']; ?> </td>
-        <td style="border: 1px solid #999; background-color: #DDD; margin: 1em; padding: 0 1em 0 1em;"><?php echo $association['name']; ?></td>
-        <td style="border: 1px solid #999; background-color: #DDD; margin: 1em; padding: 0 1em 0 1em;">
+        <td><?php echo $association['pin']; ?> </td>
+        <td><?php echo $association['name']; ?></td>
+        <td>
         <a href="?display=pindist&action=disassociate&pin=<?php echo $association['pin']; ?>&pinset=<?php echo $pinset_id; ?>">
         <?php $pin = $association['pin']; $name = $association['name']; ?>
             <img src="/admin/images/user_delete.png" 
@@ -83,7 +83,7 @@ $pinset_id = @$_REQUEST['pinset'];
                     title="Disassociate PIN <?php echo $pin; ?> from <?php echo $name; ?>">
         </a>
         </td>
-        <td style="border: 1px solid #999; background-color: #DDD; margin: 1em; padding: 0 1em 0 1em;">
+        <td>
         <a href="?display=pindist&action=revoke&pin=<?php echo $association['pin']; ?>&pinset=<?php echo $pinset_id; ?>">
         <?php $pin = $association['pin']; $name = $association['name']; ?>
             <img src="/admin/images/cancel.png" 
