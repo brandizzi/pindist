@@ -1,0 +1,32 @@
+.pindist .available {
+    float:left; 
+    width: 25%;
+}
+
+.pindist .attributed {
+    margin-left: 30%; 
+    width: 60%;
+}
+
+.pindist.pins h4 {
+    margin-top: 0em;
+}
+
+.pindist.pins table {
+    border: 1px solid #999;
+    background-color: #DDD;
+    text-align: center;
+}
+
+.pindist.pins th {
+    background-color: #AAA;
+    margin: 1em;
+}
+
+.pindist.pins td {
+    border: 1px solid #999; 
+    background-color: #DDD; 
+    margin: 1em; 
+    padding: 0 1em 0 1em;
+}
+
