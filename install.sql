@@ -17,7 +17,7 @@
 --
 -- You can get the latest version of this file at 
 -- http://bitbucket.org/brandizzi/pindist
-CREATE TABLE pin_association (
+CREATE TABLE IF NOT EXISTS pin_association (
     id INTEGER PRIMARY KEY AUTO_INCREMENT,
     pinset INTEGER REFERENCES pinsets(pinsets_id),
     pin VARCHAR(10),
