@@ -38,7 +38,7 @@
             <version>2.7</version>
             <engine>asterisk 1.6</engine>
     </depends>
-	<location>http://bitbucket.org/brandizzi/pindist/</location>
+	<location>https://bitbucket.org/brandizzi/pindist/downloads/pindist-2.7.0.0.tgz</location>
 	<info>http://bitbucket.org/brandizzi/pindist/</info>
     <changelog>
             
