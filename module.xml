@@ -23,7 +23,7 @@
 <module>
 	<rawname>pindist</rawname>
 	<name>PIN Distributor</name>
-	<version>2.7.0.0dev</version>
+	<version>2.7.0.0</version>
 	<publisher>Adam Victor Nazareth Brandizzi</publisher>
     <description>
             PIN Distributor allows the association between users and PIN numbers.
