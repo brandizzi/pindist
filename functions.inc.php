@@ -38,7 +38,7 @@ function pindist_get_used_pins($pinset_id) {
 
 function pindist_get_free_pins($pinset_id) {
     $pinset_id = (int) $pinset_id;
-    $sql = "SELECT passwords FROM pinsets;";
+    $sql = "SELECT passwords FROM pinsets WHERE pinsets_id = $pinset_id;";
     $pins = explode("\n", sql($sql, "getOne"));
     $used = pindist_get_used_pins($pinset_id);
     $available = array();
@@ -65,10 +65,23 @@ function pindist_save_association($pin, $pinset, $name) {
     sql($sql);
 }
 
-function pindist_revoke_association($pin, $pinset) {
+function pindist_disassociate_association($pin, $pinset) {
     $pin = mysql_real_escape_string($pin);
     $pinset = mysql_real_escape_string($pinset);
     $sql = "DELETE FROM pin_association WHERE pin=$pin AND  pinset=$pinset;";
     sql($sql);
+}
+
+function pindist_revoke_association($pin, $pinset) {
+    pindist_disassociate_association($pin, $pinset);
+    $pinset = (int) $pinset;
+    error_log("SELECT passwords FROM pinsets WHERE pinsets_id = $pinset;");
+    $pins = sql("SELECT passwords FROM pinsets WHERE pinsets_id = $pinset;",
+            "getOne");
+    $pins = str_replace("$pin\n", "", $pins);
+    $pins = str_replace("\n$pin", "", $pins); // If it is the last one
+    $pins = str_replace("$pin", "", $pins); // If it is the only one
+    $escaped = mysql_real_escape_string($pins);
+    sql("UPDATE pinsets SET passwords='$escaped' WHERE pinsets_id = $pinset;");
 }
 ?>
