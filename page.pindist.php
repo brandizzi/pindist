@@ -21,22 +21,21 @@
  * http://bitbucket.org/brandizzi/pindist
  */
 $action = @$_REQUEST['action'];
-if (!$action) { ?>
+$pinset_id = @$_REQUEST['pinset']; 
+if (!$action && !$pinset_id) { ?>
 <div class="pindist pinsets">
     <h2>PIN sets</h2>
     <ul>
     <?php foreach (pindist_get_pin_sets() as $pinset) { ?>
         <li>
-            <a href="?display=pindist&action=listpinsets&pinset=<?php echo $pinset['id']; ?>">
+            <a href="?display=pindist&pinset=<?php echo $pinset['id']; ?>">
                 <?php echo $pinset['description']; ?>
             </a>
         </li> 
     <?php } ?>
     </ul>
 </div>
-<?php } else if ($action == 'listpinsets') { 
-    $pinset_id = $_REQUEST['pinset'];
-?>
+<?php } else if (!$action && $pinset_id) { ?>
 <div class="pindist pins">
     <h2>PINs</h2>
     <div class="available" style="float:left; width: 25%;">
@@ -85,9 +84,8 @@ if (!$action) { ?>
     </div>
     <div style="clear:both;"></div>
 </div>
-<?php } else if ($action == 'attribute') {  
+<?php } else if ($action == 'attribute' && $pinset_id) {
     $pin = $_REQUEST['pin'];
-    $pinset_id = $_REQUEST['pinset'];
 ?>
 <div class="pindist attribute">
     <h2>Attribute PIN</h2>
@@ -100,21 +98,13 @@ if (!$action) { ?>
         <input type="submit">
     </form>
 </div>
-<?php } else if ($action == 'attribute_save') {  
+<?php } else if ($action == 'attribute_save' && $pinset_id) {  
     $pin = $_REQUEST['pin'];
-    $pinset_id = $_REQUEST['pinset'];
     $name = $_REQUEST['name'];
     pindist_save_association($pin, $pinset_id, $name);
-?>
-<a href="?display=pindist&action=listpinsets&pinset=<?php echo $pinset_id; ?>">
-    Back
-</a>
-<?php } else if ($action == 'revoke') {  
+    redirect_standard('pinset');
+} else if ($action == 'revoke' && $pinset_id) {  
     $pin = $_REQUEST['pin'];
-    $pinset_id = $_REQUEST['pinset'];
     pindist_revoke_association($pin, $pinset_id);
-?>
-<a href="?display=pindist&action=listpinsets&pinset=<?php echo $pinset_id; ?>">
-    Back
-</a>
-<?php } ?>
+    redirect_standard('pinset');
+} ?>

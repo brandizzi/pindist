@@ -23,8 +23,8 @@
 <module>
 	<rawname>pindist</rawname>
 	<name>PIN Distributor</name>
-	<version>1.0.0.0</version>
-	<publisher>Grupo 954</publisher>
+	<version>2.7.0.0dev</version>
+	<publisher>Adam Victor Nazareth Brandizzi</publisher>
     <description>
             PIN Distributor allows the association between users and PIN numbers.
     </description>
@@ -38,8 +38,8 @@
             <version>2.7</version>
             <engine>asterisk 1.6</engine>
     </depends>
-	<location>http://grupo954.com/</location>
-	<info>http://grupo954.com/</info>
+	<location>http://bitbucket.org/brandizzi/pindist/</location>
+	<info>http://bitbucket.org/brandizzi/pindist/</info>
     <changelog>
             
     </changelog>
