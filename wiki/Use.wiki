@@ -1,0 +1,33 @@
+pindist is not really fancy but seems to be easy to use nonetheless. Anyway, there follows some instructions about using it.
+
+== Attributing PINs to users ==
+
+This module will appear in the menu as "PIN Distribution":
+
+{{http://i.imgur.com/AqZZk.png}}
+
+Click on it. Then, you will see the list of all PIN sets:
+
+{{http://i.imgur.com/YYJ1A.png}}
+
+Click on the one you want to take a PIN from for someone. You will see all available PINs, as well the ones that are already attributed (in this case, none):
+
+{{http://i.imgur.com/0MGap.png}}
+
+To associate a PIN to someone, just click in the "Attribute" button ({{http://i.imgur.com/tS2Lv.png}}). You will get a form like the one below:
+
+{{http://i.imgur.com/pKn7I.png}}
+
+Type the name of the person and click on the submit button. A "Back" link will appear:
+
+{{http://i.imgur.com/NogEO.png}}
+
+After clicking on it, you will return to the list of PINs. Now the selected one is listed as "Attributed":
+
+{{http://i.imgur.com/LevA3.png}}
+
+== Disassociating PINs from users ==
+
+To revoke a PIN from an user, just click in the "Disassociate" button ({{http://i.imgur.com/gKl4a.png}}) and then click in "Back".
+
+Note that disassociating //does not disable the PIN neither impedes the disassociated user from using the PIN//. If you want to disable the PIN, you should remove it from the PIN set.

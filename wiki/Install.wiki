@@ -1,0 +1,17 @@
+It is fairly easy to install pindist in [[http://freepbx.org/|FreePBX]]. Since it was made to be used in an Elastix instalation, it can also be installed in [[http://elastix.org|Elastix]] with some more steps.
+
+== In FreePBX ==
+
+To install it in FreePBX, first download [[https://bitbucket.org/brandizzi/pindist/downloads/pindist-2.7.0.0.tgz|the most recent version]] from our [[https://bitbucket.org/brandizzi/pindist/|download page]]. After that, just go to "Module admin" and click in "Upload module". After uploading it, go to "Module admin" again and click on "PIN distributor". Then, mark the option "Install" and click in the "Process" button, confirming the instalation after all.
+
+== In Elastix ==
+
+I created this module for using in an Elastix server. In this server, the option will not appear in the menu of the default interface. However, the [[https://bitbucket.org/brandizzi/pindist/downloads/elastix-pbxadmin-pin-dist.diff|patch]] in the download page can be applied to make it appear in Elastix. 
+
+To use it, first install the module through the unbridged FreePBX module admin. Then, just log into the server and follow the steps below:
+
+{{{
+# wget https://bitbucket.org/brandizzi/pindist/downloads/elastix-pbxadmin-pin-dist.diff -o /dev/null
+# cd /var/www/html/modules/pbxadmin/
+# patch -p0 -i /root/elastix-pbxadmin-pin-dist.diff
+}}}
